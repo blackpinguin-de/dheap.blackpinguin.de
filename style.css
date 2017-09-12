@@ -1,0 +1,80 @@
+/* title */
+#title {
+    font-size: 16pt;
+}
+
+/* my name smaller*/
+#title > span {
+    font-size: 10pt;
+}
+
+/* JavaScript error */
+#error {
+    text-align: center;
+    color: white;
+    background-color: red;
+    font-weight: bold;
+    font-size: 14pt;
+    line-height: 18pt;
+}
+
+/* change language */
+#language {
+    font-size: 10pt;
+}
+
+/* smaller text-input-fields */
+input[type="text"]{
+    width: 3em;
+}
+
+/* menu: align elements at center */
+body > div {
+    text-align: center;
+    margin: 5px;
+}
+
+/* menu: vertical align, padding, margin */
+body > div > div {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 4px;
+}
+
+#svg {
+    border: 1px solid black;
+    background-color: #EEE;
+    overflow: visible;
+}
+
+/* nodes */
+#svg > g > svg {
+    cursor: pointer;
+    overflow: visible;
+}
+/* node text */
+#svg > g > svg > text {
+    cursor: pointer;
+            user-select: none;
+         -o-user-select: none;
+       -moz-user-select: none;
+     -khtml-user-select: none;
+    -webkit-user-select: none;
+    dominant-baseline: middle;
+    text-anchor: middle;
+    font-weight: bold;
+}
+/* circle and lines */
+line, circle {
+    stroke: black;
+    stroke-width: 2;
+}
+
+#navi > div, #svg, #error {
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+}
