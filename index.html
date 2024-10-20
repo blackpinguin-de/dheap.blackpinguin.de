@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="en">
+  <head>
+    <title>d-ary heaps</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta content="en" name="DC.Language">
+    <meta content="Robin Christopher Ladiges" name="author">
+    <meta content="Robin Christopher Ladiges" name="DC.Creator">
+    <meta content="all" name="robots">
+    <link rel="stylesheet" type="text/css" href="style.css" >
+    <script src="d3.v3.js" charset="utf-8"></script>
+    <script src="util.js"></script>
+    <script src="dHeap.js"></script>
+    <script src="main.js"></script>
+    <script src="examples.js"></script>
+  </head>
+  <body onload="init();">
+    <div id="title">
+Visualization of <a href="https://en.wikipedia.org/wiki/D-ary_heap">d-ary heaps</a> in <a href="http://d3js.org/">D3</a> <span>by <a href="https://rcl.blackpinguin.de/">Robin C. Ladiges</a></span>
+    </div>
+    <div>
+        <svg id="svg" width="900" height="300">
+            <g transform="translate(20,20)"></g>
+        </svg>
+    </div>
+    <noscript>
+        <p id="error">Error: JavaScript is required for this visualization.</p>
+    </noscript>
+    <!-- Navigation -->
+    <div id="navi">
+        <!-- Random -->
+        <div style="background-color: #AFF;">
+            <input id="textRndD" type="text" value="2" /> degree d            <br />
+            <input id="textRndN" type="text" value="10" /> node count n            <br />
+            <input id="butRandom" type="button" value="generate random heap" onclick="randomHeap();" />
+        </div>
+        <!-- change D, Insert -->
+        <div style="background-color: #AAA;">
+            <input id="textChangeD" type="text" value="2" />
+            <input id="butChangeD" type="button" value="change degree" onclick="changeD();" />
+            <br />
+            <input id="textInsert" type="text" value="4" />
+            <input id="butInsert" type="button" value="insert" onclick="doInsert();" />
+        </div>
+        <!-- What to do on a node onclick -->
+        <div style="background-color: #FAA;">
+            clicking behavior:            <br /><input id="rbChange" type="radio" name="radioOnClick" value="change value"/> change value to                <input id="textChange" type="text" value="42" />
+            <br /><input id="rbRemove" type="radio" name="radioOnClick" value="remove" checked="checked" /> remove node        </div>
+        <!-- Step Control -->
+        <div style="background-color: #AFA;">
+            <input id="butStep" type="button" value="step" onclick="doStep();"/>
+            <input id="butSkip" type="button" value="skip" onclick="doSkip();"/>
+            <br/><input id="cbAutoplay" type="checkbox" name="autoplay" value="autoplay" checked="checked"> auto step        </div>
+    </div>
+
+<div id="runtime">
+  Minimum: &Omicron;(1)
+  <br/>Maximum: &Omicron;(n)
+  <br/>Insert: &Omicron;(log<sub>d</sub> n)
+  <br/>Remove: &Omicron;(d&middot;log<sub>d</sub> n)
+  <br/>Decrease Value: &Omicron;(log<sub>d</sub> n)
+  <br/>Increase Value: &Omicron;(d&middot;log<sub>d</sub> n)
+</div>
+
+<div id="language" lang="de"><a href="de.html">Diese Seite auf Deutsch anzeigen</a></div>
+
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="de">
+  <head>
+    <title>d-näre Heaps</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta content="de" name="DC.Language">
+    <meta content="Robin Christopher Ladiges" name="author">
+    <meta content="Robin Christopher Ladiges" name="DC.Creator">
+    <meta content="all" name="robots">
+    <link rel="stylesheet" type="text/css" href="style.css" >
+    <script src="d3.v3.js" charset="utf-8"></script>
+    <script src="util.js"></script>
+    <script src="dHeap.js"></script>
+    <script src="main.js"></script>
+    <script src="examples.js"></script>
+  </head>
+  <body onload="init();">
+    <div id="title">
+Visualisierung <a href="https://en.wikipedia.org/wiki/D-ary_heap">d-närer Heaps</a> in <a href="http://d3js.org/">D3</a> <span>von <a href="https://rcl.blackpinguin.de/?lang=de">Robin C. Ladiges</a></span>
+    </div>
+    <div>
+        <svg id="svg" width="900" height="300">
+            <g transform="translate(20,20)"></g>
+        </svg>
+    </div>
+    <noscript>
+        <p id="error">Fehler: JavaScript wird für diese Visualisierung benötigt.</p>
+    </noscript>
+    <!-- Navigation -->
+    <div id="navi">
+        <!-- Random -->
+        <div style="background-color: #AFF;">
+            <input id="textRndD" type="text" value="2" /> Grad d            <br />
+            <input id="textRndN" type="text" value="10" /> Anzahl Knoten n            <br />
+            <input id="butRandom" type="button" value="zufälligen Heap erzeugen" onclick="randomHeap();" />
+        </div>
+        <!-- change D, Insert -->
+        <div style="background-color: #AAA;">
+            <input id="textChangeD" type="text" value="2" />
+            <input id="butChangeD" type="button" value="Grad ändern" onclick="changeD();" />
+            <br />
+            <input id="textInsert" type="text" value="4" />
+            <input id="butInsert" type="button" value="einfügen" onclick="doInsert();" />
+        </div>
+        <!-- What to do on a node onclick -->
+        <div style="background-color: #FAA;">
+            Klickverhalten:            <br /><input id="rbChange" type="radio" name="radioOnClick" value="change value"/> Wert ändern auf                <input id="textChange" type="text" value="42" />
+            <br /><input id="rbRemove" type="radio" name="radioOnClick" value="remove" checked="checked" /> Knoten entfernen        </div>
+        <!-- Step Control -->
+        <div style="background-color: #AFA;">
+            <input id="butStep" type="button" value="Schritt" onclick="doStep();"/>
+            <input id="butSkip" type="button" value="Überspringe" onclick="doSkip();"/>
+            <br/><input id="cbAutoplay" type="checkbox" name="autoplay" value="autoplay" checked="checked"> automatisch        </div>
+    </div>
+
+<div id="runtime">
+  Minimum: &Omicron;(1)
+  <br/>Maximum: &Omicron;(n)
+  <br/>Einfügen: &Omicron;(log<sub>d</sub> n)
+  <br/>Entfernen: &Omicron;(d&middot;log<sub>d</sub> n)
+  <br/>Wert erhöhen: &Omicron;(log<sub>d</sub> n)
+  <br/>Wert verringern: &Omicron;(d&middot;log<sub>d</sub> n)
+</div>
+
+<div id="language" lang="en"><a href="index.html">view this page in english</a></div>
+
+  </body>
+</html>
