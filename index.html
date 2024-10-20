@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+    <title>d-ary heaps</title>
+    
+    <meta content="en" name="DC.Language">
+    <meta content="Robin Christopher Ladiges" name="author">
+    <meta content="Robin Christopher Ladiges" name="DC.Creator">
+    <meta content="all" name="robots">
+    
+    <script src="d3.v3.js" charset="utf-8"></script>
+    <script src="util.js"></script>
+    <script src="dheap.js"></script>
+    <script src="main.js"></script>
+    <script src="examples.js"></script>
+  
+<link media="all" href="index.css" type="text/css" rel="stylesheet">
+</head>
+<body onload="init();">
+    <div id="title">
+Visualization of <a href="https://en.wikipedia.org/wiki/D-ary_heap">d-ary heaps</a> in <a href="http://d3js.org/">D3</a> <span>by <a href="https://rcl.blackpinguin.de/">Robin C. Ladiges</a></span>
+    </div>
+    <div>
+        <svg id="svg" width="900" height="300">
+            <g transform="translate(20,20)"><line x1="430" y1="0" x2="215" y2="86.66666666666666"></line><line x1="430" y1="0" x2="645" y2="86.66666666666666"></line><line x1="215" y1="86.66666666666666" x2="143.33333333333331" y2="173.33333333333331"></line><line x1="215" y1="86.66666666666666" x2="286.66666666666663" y2="173.33333333333331"></line><line x1="143.33333333333331" y1="173.33333333333331" x2="143.33333333333331" y2="260"></line><line x1="645" y1="86.66666666666666" x2="573.3333333333333" y2="173.33333333333331"></line><line x1="645" y1="86.66666666666666" x2="716.6666666666667" y2="173.33333333333331"></line><svg x="430" y="0"><circle stroke="black" fill="white" cx="0" cy="0" r="12.307764064044152" style="cursor: pointer;"></circle><text x="0" y="0">2</text></svg><svg x="215" y="86.66666666666666"><circle stroke="black" fill="white" cx="0" cy="0" r="12.307764064044152" style="cursor: pointer;"></circle><text x="0" y="0">5</text></svg><svg x="143.33333333333331" y="173.33333333333331"><circle stroke="black" fill="white" cx="0" cy="0" r="12.307764064044152" style="cursor: pointer;"></circle><text x="0" y="0">8</text></svg><svg x="143.33333333333331" y="260"><circle stroke="black" fill="white" cx="0" cy="0" r="14.419742348374221" style="cursor: pointer;"></circle><text x="0" y="0">12</text></svg><svg x="286.66666666666663" y="173.33333333333331"><circle stroke="black" fill="white" cx="0" cy="0" r="14.139950730495967" style="cursor: pointer;"></circle><text x="0" y="0">11</text></svg><svg x="645" y="86.66666666666666"><circle stroke="black" fill="white" cx="0" cy="0" r="12.307764064044152" style="cursor: pointer;"></circle><text x="0" y="0">9</text></svg><svg x="573.3333333333333" y="173.33333333333331"><circle stroke="black" fill="white" cx="0" cy="0" r="14.419742348374221" style="cursor: pointer;"></circle><text x="0" y="0">20</text></svg><svg x="716.6666666666667" y="173.33333333333331"><circle stroke="black" fill="white" cx="0" cy="0" r="14.419742348374221" style="cursor: pointer;"></circle><text x="0" y="0">13</text></svg></g>
+        </svg>
+    </div>
+    <noscript>
+        <p id="error">Error: JavaScript is required for this visualization.</p>
+    </noscript>
+    <!-- Navigation -->
+    <div id="navi">
+        <!-- Random -->
+        <div style="background-color: rgb(170, 255, 255);">
+            <input id="textRndD" value="2" type="text"> degree d            <br>
+            <input id="textRndN" value="10" type="text"> node count n            <br>
+            <input id="butRandom" value="generate random heap" onclick="randomHeap();" type="button">
+        </div>
+        <!-- change D, Insert -->
+        <div style="background-color: rgb(170, 170, 170);">
+            <input id="textChangeD" value="2" type="text">
+            <input id="butChangeD" value="change degree" onclick="changeD();" type="button">
+            <br>
+            <input id="textInsert" value="4" type="text">
+            <input id="butInsert" value="insert" onclick="doInsert();" type="button">
+        </div>
+        <!-- What to do on a node onclick -->
+        <div style="background-color: rgb(255, 170, 170);">
+            clicking behavior:            <br><input id="rbChange" name="radioOnClick" value="change value" type="radio"> change value to                <input id="textChange" value="42" type="text">
+            <br><input id="rbRemove" name="radioOnClick" value="remove" checked="checked" type="radio"> remove node        </div>
+        <!-- Step Control -->
+        <div style="background-color: rgb(170, 255, 170);">
+            <input id="butStep" value="step" onclick="doStep();" disabled="disabled" type="button">
+            <input id="butSkip" value="skip" onclick="doSkip();" disabled="disabled" type="button">
+            <br><input id="cbAutoplay" name="autoplay" value="autoplay" checked="checked" type="checkbox"> auto step        </div>
+    </div>
+
+<div id="runtime">
+  Minimum: Ο(1)
+  <br>Maximum: Ο(n)
+  <br>Insert: Ο(log<sub>d</sub> n)
+  <br>Remove: Ο(d·log<sub>d</sub> n)
+  <br>Decrease Value: Ο(log<sub>d</sub> n)
+  <br>Increase Value: Ο(d·log<sub>d</sub> n)
+</div>
+
+<div id="language" lang="de"><a href="default.html" indepth="true">Diese Seite auf Deutsch anzeigen</a></div>
+
+  
+
+
+
+</body></html>

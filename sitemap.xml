@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="../../sitemap.xsl" type="text/xsl" media="all"?>
+<site>
+<page file="index.html" text="d-ary heaps" title="d-ary heaps">
+<page file="default.html" text="Diese Seite auf Deutsch anzeigen" title="d-näre Heaps"/>
+</page>
+</site>
